@@ -9,11 +9,16 @@ export const Button: FC<IButtonProps> = ({
   handleClick,
   path,
   hierarchy = 'primary',
-  size = 'default'
+  size = 'default',
+  hint,
 }) => {
   if (path) {
     return (
-      <Link to={path} className={clsxm(styles.btn, styles[hierarchy], styles[size])}>
+      <Link
+        to={path}
+        className={clsxm(styles.btn, styles[hierarchy], styles[size])}
+        aria-label={hint}
+      >
         {children}
       </Link>
     );
@@ -23,6 +28,7 @@ export const Button: FC<IButtonProps> = ({
     <button
       onClick={handleClick}
       className={clsxm(styles.btn, styles[hierarchy], styles)}
+      aria-label={hint}
     >
       {children}
     </button>

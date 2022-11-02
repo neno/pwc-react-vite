@@ -6,13 +6,13 @@ import { RecipeListItem } from './components/recipe-list-item';
 export const RecipesList = () => {
   const { isInitialized, recipes, setRecipes, deleteRecipe } = useStore();
 
-  useQuery({
-    queryKey: ['recipes'],
-    queryFn: fetchRecipes,
-    suspense: true,
-    enabled: !isInitialized,
-    onSuccess: (data) => setRecipes(data),
-  });
+  // useQuery({
+  //   queryKey: ['recipes'],
+  //   queryFn: fetchRecipes,
+  //   suspense: true,
+  //   enabled: !isInitialized,
+  //   onSuccess: (data) => setRecipes(data),
+  // });
 
   return (
     <ul>

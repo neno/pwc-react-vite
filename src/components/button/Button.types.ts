@@ -6,4 +6,5 @@ export interface IButtonProps {
   path?: string;
   hierarchy?: 'primary' | 'secondary' | 'tertiary';
   size?: 'default' | 'small';
+  hint?: string;
 }

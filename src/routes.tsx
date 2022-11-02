@@ -1,10 +1,10 @@
 import { Route } from '@tanstack/react-location';
-import { Recipes } from './recipes';
+// import { Recipes } from './recipes';
 
 export const routes: Route[] = [
   {
     path: '/',
-    element: <Recipes />,
+    element: () => import('./recipes/Recipes').then((module) => <module.default />),
   },
   {
     path: 'recipes',

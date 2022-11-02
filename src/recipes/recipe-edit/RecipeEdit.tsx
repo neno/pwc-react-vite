@@ -6,12 +6,14 @@ import { IRecipeFormInputs } from '../components/recipe-form/RecipeForm.types';
 
 export const RecipeEdit = () => {
   const { id } = useMatch().params;
-  const store = useStore();
+  const { recipes, updateRecipe } = useStore();
   const navigate = useNavigate();
-  const recipe: IRecipe | undefined = store.recipes.find((recipe) => recipe.id === id);
+  const recipe: IRecipe | undefined = recipes.find(
+    (recipe) => recipe.id === id
+  );
 
   const submitFormData = (data: IRecipeFormInputs) => {
-    store.updateRecipe({ ...data, id });
+    updateRecipe({ ...data, id });
     navigate({ to: '/', replace: true });
   };
 

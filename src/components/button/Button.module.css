@@ -11,22 +11,13 @@
 }
 
 .primary {
-  @apply bg-sky-500 text-white;
+  @apply bg-sky-500 text-slate-900 hover:bg-sky-700 hover:text-white;
 }
 
 .secondary {
-  @apply bg-zinc-800 text-sky-500 font-normal border border-sky-500;
+  @apply bg-zinc-800 text-sky-500 font-normal border border-sky-500 hover:border-white hover:text-white;
 }
 
 .tertiary {
-  @apply px-0 bg-transparent text-sky-500 font-normal;
-}
-
-
-a.primary:hover {
-  @apply hover:bg-sky-700;
-}
-
-a.tertiary:hover {
-  @apply hover:underline;
+  @apply px-0 bg-transparent text-sky-500 font-normal hover:underline;
 }
