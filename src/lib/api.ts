@@ -1,4 +1,4 @@
-import { IRecipe } from './../store';
+import { IRecipe } from '@/store';
 import { initialRecipes } from '../initial-recipes';
 
 // Simulate a long lasting API call

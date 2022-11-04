@@ -1,8 +1,7 @@
+import useStore, { IRecipe } from '@/store';
+import { Button, Container, PageHeader, RecipeForm } from '@/ui';
+import { IRecipeFormInputs } from '@/ui/recipe-form/RecipeForm.types';
 import { useMatch, useNavigate } from '@tanstack/react-location';
-import { Button, Container, PageHeader } from '../../components';
-import useStore, { IRecipe } from '../../store';
-import { RecipeForm } from '../components';
-import { IRecipeFormInputs } from '../components/recipe-form/RecipeForm.types';
 
 export const RecipeEdit = () => {
   const { id } = useMatch().params;

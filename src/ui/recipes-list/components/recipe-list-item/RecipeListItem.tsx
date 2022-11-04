@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-location';
 import { FC } from 'react';
-import { Button } from '../../../../../components';
+import { Button } from '../../..';
 import { IRecipeListItemProps } from './RecipeListItem.types';
 
 export const RecipeListItem: FC<IRecipeListItemProps> = ({

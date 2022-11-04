@@ -1,6 +1,7 @@
+import useStore, { IRecipe } from '@/store';
+import { Button, Container, PageHeader } from '@/ui';
 import { useMatch } from '@tanstack/react-location';
-import { Button, Container, PageHeader } from '../../components';
-import useStore, { IRecipe } from '../../store';
+
 
 export const RecipeDetail = () => {
   const { id } = useMatch().params;

@@ -1,7 +1,9 @@
+
+import { fetchRecipes } from '@/lib/api';
+import useStore from '@/store';
 import { Outlet } from '@tanstack/react-location';
 import { useQuery } from '@tanstack/react-query';
-import { fetchRecipes } from '../../lib/api';
-import useStore from '../../store';
+
 
 export const Layout = () => {
   const { isInitialized, setRecipes } = useStore();

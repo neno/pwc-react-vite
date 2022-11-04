@@ -1,7 +1,7 @@
 import { Router, ReactLocation } from '@tanstack/react-location';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { routes } from './routes';
-import { Layout, Spinner } from './components';
+import { Layout, Spinner } from './ui';
 import { Suspense } from 'react';
 
 const location = new ReactLocation();

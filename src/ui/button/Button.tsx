@@ -2,7 +2,8 @@ import { Link } from '@tanstack/react-location';
 import { FC } from 'react';
 import { IButtonProps } from './Button.types';
 import styles from './Button.module.css';
-import clsxm from '../../lib/clsxm';
+import clsxm from '@/lib/clsxm';
+
 
 export const Button: FC<IButtonProps> = ({
   children,

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { InputField, TextareaField } from '../../../components';
+import { InputField, TextareaField } from '..';
 import { IRecipeFormInputs, IRecipeFormProps } from './RecipeForm.types';
 
 export const RecipeForm: FC<IRecipeFormProps> = ({

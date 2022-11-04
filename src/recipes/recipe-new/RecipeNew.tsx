@@ -1,8 +1,7 @@
+import useStore from '@/store';
+import { Button, Container, PageHeader, RecipeForm } from '@/ui';
+import { IRecipeFormInputs } from '@/ui/recipe-form/RecipeForm.types';
 import { useNavigate } from '@tanstack/react-location';
-import { Button, Container, PageHeader } from '../../components';
-import useStore from '../../store';
-import { RecipeForm } from '../components';
-import { IRecipeFormInputs } from '../components/recipe-form/RecipeForm.types';
 
 export const RecipeNew = () => {
   const store = useStore();

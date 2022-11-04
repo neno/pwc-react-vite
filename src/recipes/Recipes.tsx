@@ -1,6 +1,4 @@
-import { Button, PageHeader } from '../components';
-import { Container } from '../components/container';
-import { RecipesList } from './components';
+import { Button, Container, PageHeader, RecipesList } from '@/ui';
 
 export const Recipes = () => {
   return (
