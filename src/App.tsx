@@ -17,15 +17,14 @@ function App() {
   return (
     <Router routes={routes} location={location}>
       <QueryClientProvider client={queryClient}>
-      <p className='flex-0 block w-full p-4 bg-sky-500  font-bold text-slate-900'>
-        A react cookbook using only the best ingredients
-      </p>
-      <main className='flex-1'>
-        <Suspense fallback={<Spinner />}>
-          <Layout />
-        </Suspense>
-      </main>
-
+        <p className='flex-0 block w-full p-4 bg-sky-500  font-bold text-slate-900'>
+          A react cookbook using only the best ingredients
+        </p>
+        <main className='flex-1'>
+          <Suspense fallback={<Spinner />}>
+            <Layout />
+          </Suspense>
+        </main>
       </QueryClientProvider>
     </Router>
   );

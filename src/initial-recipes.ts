@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { IRecipe } from './store';
 
 export const initialRecipes: IRecipe[] = [
