@@ -60,6 +60,14 @@ export const useUpdateRecipeMutation = () => {
 export const useDeleteRecipeMutation = () => {
   const queryClient = useQueryClient();
   return useMutation(deleteRecipe, {
-    onSuccess: () => queryClient.invalidateQueries(['recipes']),
+    onMutate: async (id) => {
+      await queryClient.cancelQueries(['recipes']);
+      const prevRecipes: IRecipe[] | undefined = queryClient.getQueryData([
+        'recipes',
+      ]);
+      const newRecipes = prevRecipes?.filter((rec: IRecipe) => rec.id !== id);
+      queryClient.setQueryData(['recipes'], newRecipes);
+    },
+    // onSuccess: () => queryClient.invalidateQueries(['recipes']),
   })
 }

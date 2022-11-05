@@ -1,4 +1,4 @@
-import { Button, Container, PageHeader } from '@/ui';
+import { Button, Container, PageHeader, Spinner } from '@/ui';
 import { Suspense } from 'react';
 import { RecipesList } from './recipes-list';
 
@@ -8,7 +8,7 @@ export const Recipes = () => {
       <PageHeader title='My Recipes'>
         <Button path='/recipes/new'>New Recipe</Button>
       </PageHeader>
-      <Suspense fallback={<h1 className='text-2xl'>Loading recipes...</h1>}>
+      <Suspense fallback={<Spinner />}>
         <RecipesList />
       </Suspense>
     </Container>
