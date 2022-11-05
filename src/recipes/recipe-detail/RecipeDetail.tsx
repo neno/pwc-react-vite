@@ -1,23 +1,21 @@
-import useStore, { IRecipe } from '@/store';
-import { Button, Container, PageHeader } from '@/ui';
+import { useRecipeByIdQuery } from '@/hooks/use-recipes';
+import { Button, PageHeader } from '@/ui';
 import { useMatch } from '@tanstack/react-location';
-
 
 export const RecipeDetail = () => {
   const { id } = useMatch().params;
-  const { recipes } = useStore();
-  const recipe: IRecipe | undefined = recipes.find(
-    (recipe) => recipe.id === id
-  );
+  const { data: recipe } = useRecipeByIdQuery(id);
 
-  return recipe ? (
-    <Container>
+  if (!recipe) return null;
+
+  return (
+    <>
       <PageHeader title={recipe.name} />
       <div className='border-b-2 border-sky-500 relative py-4 flex align-center justify-between'>
         <Button path={`/`} size='small' hierarchy='tertiary'>
           {`Back to index`}
         </Button>
-        <Button path={`/recipes/${id}/edit`} size='small'>
+        <Button path={`/recipes/${recipe.id}/edit`} size='small'>
           Edit
         </Button>
       </div>
@@ -37,8 +35,8 @@ export const RecipeDetail = () => {
           </div>
         </div>
       </div>
-    </Container>
-  ) : null;
+    </>
+  );
 };
 
 export default RecipeDetail;

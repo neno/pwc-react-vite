@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch src/db.json --delay 2000"
   },
   "dependencies": {
     "@tanstack/react-location": "^3.7.4",
     "@tanstack/react-query": "^4.14.1",
+    "@tanstack/react-query-devtools": "^4.14.1",
+    "json-server": "^0.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.38.0",
@@ -19,6 +22,7 @@
     "zustand": "^4.1.4"
   },
   "devDependencies": {
+    "@types/node": "^18.11.9",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@types/uuid": "^8.3.4",

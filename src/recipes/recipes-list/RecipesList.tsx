@@ -1,16 +1,15 @@
-import useStore from '@/store';
+import { useRecipesQuery } from '@/hooks/use-recipes';
 import { RecipeListItem } from './components/recipe-list-item';
 
 export const RecipesList = () => {
-  const { recipes, deleteRecipe } = useStore();
+  const { data } = useRecipesQuery();
 
   return (
     <ul>
-      {recipes?.map((recipe) => (
+      {data?.map((recipe) => (
         <RecipeListItem
           key={recipe.id}
           recipe={recipe}
-          onDelete={deleteRecipe}
         />
       ))}
     </ul>

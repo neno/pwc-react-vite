@@ -1,3 +1,4 @@
+import { IRecipe } from '@/store';
 import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { InputField, TextareaField } from '..';
@@ -8,7 +9,7 @@ export const RecipeForm: FC<IRecipeFormProps> = ({
   onSubmit,
   values,
 }) => {
-  const methods = useForm<IRecipeFormInputs>({ defaultValues: values });
+  const methods = useForm<IRecipe>({ defaultValues: values });
   const { handleSubmit, watch } = methods;
   const imageUrl = watch('image') ?? '/placeholder.png';
 

@@ -1,9 +1,10 @@
+import { IRecipe } from '@/store';
 import { ReactNode } from 'react';
 
 export interface IRecipeFormProps {
-  onSubmit: (data: IRecipeFormInputs) => void;
+  onSubmit: (data: IRecipe) => void;
   children: ReactNode;
-  values?: IRecipeFormInputs;
+  values?: IRecipe;
 }
 
 export interface IRecipeFormInputs {

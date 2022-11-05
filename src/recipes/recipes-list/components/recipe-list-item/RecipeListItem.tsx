@@ -1,12 +1,16 @@
 import { Link } from '@tanstack/react-location';
 import { FC } from 'react';
-import { Button } from '../../..';
+import { Button } from '@/ui';
 import { IRecipeListItemProps } from './RecipeListItem.types';
+import { useDeleteRecipeMutation } from '@/hooks/use-recipes';
 
 export const RecipeListItem: FC<IRecipeListItemProps> = ({
   recipe: { id, name, description, image },
-  onDelete
 }) => {
+  const { mutate } = useDeleteRecipeMutation();
+
+  const onDelete = (id: string) => mutate(id);
+
   return (
     <li className=' border-b-2 border-white'>
       <div className='flex flex-row gap-4 py-8'>

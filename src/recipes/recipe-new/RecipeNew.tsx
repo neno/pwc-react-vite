@@ -1,14 +1,14 @@
-import useStore from '@/store';
+import { useCreateRecipeMutation } from '@/hooks/use-recipes';
 import { Button, Container, PageHeader, RecipeForm } from '@/ui';
 import { IRecipeFormInputs } from '@/ui/recipe-form/RecipeForm.types';
 import { useNavigate } from '@tanstack/react-location';
 
 export const RecipeNew = () => {
-  const store = useStore();
   const navigate = useNavigate();
+  const { mutate } = useCreateRecipeMutation();
 
   const submitFormData = (data: IRecipeFormInputs) => {
-    store.addRecipe({ ...data, id: null });
+    mutate(data);
     navigate({ to: '/', replace: true });
   };
 
