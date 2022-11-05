@@ -1,12 +1,6 @@
 import create from 'zustand';
 import { v4 as uuidv4 } from 'uuid';
-
-export interface IRecipe {
-  id: string | null;
-  name: string;
-  description: string;
-  image: string;
-}
+import { IRecipe } from '@/recipes/Recipes.types';
 
 export interface IStore {
   isInitialized: boolean;

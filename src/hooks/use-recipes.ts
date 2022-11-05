@@ -1,6 +1,6 @@
-import { IRecipe } from './../store/index';
-import { deleteRecipe, fetchRecipeById, fetchRecipes, updateRecipe, createRecipe } from '@/lib/api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { deleteRecipe, fetchRecipeById, fetchRecipes, updateRecipe, createRecipe } from '@/lib/api';
+import { IRecipe } from '@/recipes/Recipes.types';
 
 export const useRecipesQuery = () =>
   useQuery({
@@ -68,6 +68,5 @@ export const useDeleteRecipeMutation = () => {
       const newRecipes = prevRecipes?.filter((rec: IRecipe) => rec.id !== id);
       queryClient.setQueryData(['recipes'], newRecipes);
     },
-    // onSuccess: () => queryClient.invalidateQueries(['recipes']),
   })
 }

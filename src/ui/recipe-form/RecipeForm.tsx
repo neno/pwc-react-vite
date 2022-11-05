@@ -1,4 +1,4 @@
-import { IRecipe } from '@/store';
+import { IRecipe } from '@/recipes/Recipes.types';
 import { FC } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { InputField, TextareaField } from '..';

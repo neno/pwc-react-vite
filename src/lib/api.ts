@@ -1,4 +1,4 @@
-import { IRecipe } from '@/store';
+import { IRecipe } from '@/recipes/Recipes.types';
 import { IRecipeFormInputs } from '@/ui/recipe-form/RecipeForm.types';
 import { useMutation } from '@tanstack/react-query';
 

@@ -1,4 +1,4 @@
-import { IRecipe } from './store';
+import { IRecipe } from '@/recipes/Recipes.types';
 
 export const initialRecipes: IRecipe[] = [
   {

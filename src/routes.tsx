@@ -1,5 +1,5 @@
 import { MakeGenerics, ReactLocation, Route } from '@tanstack/react-location';
-import { IRecipe } from './store';
+import { IRecipe } from '@/recipes/Recipes.types';
 
 export const routes: Route[] = [
   {
