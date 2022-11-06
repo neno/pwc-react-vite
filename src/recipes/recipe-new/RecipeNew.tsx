@@ -3,6 +3,13 @@ import { Button, Container, PageHeader, RecipeForm } from '@/ui';
 import { IRecipeFormInputs } from '@/ui/recipe-form/RecipeForm.types';
 import { useNavigate } from '@tanstack/react-location';
 
+const defaultValues = {
+  id: '',
+  name: '',
+  image: '',
+  description: ''
+}
+
 export const RecipeNew = () => {
   const navigate = useNavigate();
   const { mutate } = useCreateRecipeMutation();
@@ -15,7 +22,7 @@ export const RecipeNew = () => {
   return (
     <Container>
       <PageHeader title='New Recipe' />
-      <RecipeForm onSubmit={submitFormData}>
+      <RecipeForm onSubmit={submitFormData} values={defaultValues}>
         <p className='py-4 full-w mt-[1.1rem] flex gap-4 align-center justify-start'>
           <Button>Add Recipe</Button>
           <Button path='/' hierarchy='tertiary'>
