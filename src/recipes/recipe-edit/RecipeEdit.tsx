@@ -13,8 +13,6 @@ export const RecipeEdit = () => {
   const { mutate } = useUpdateRecipeMutation();
 
   const submitFormData = (data: IRecipeFormInputs) => {
-    console.log('submitFormData', data);
-
     mutate({ ...data, id });
     navigate({ to: '/' });
   };
