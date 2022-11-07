@@ -19,8 +19,8 @@ export const RecipeDetail = () => {
           Edit
         </Button>
       </div>
-      <div className='grid grid-cols-12 pt-8'>
-        <div className='col-span-7'>
+      <div className='lg:grid grid-cols-12 pt-8'>
+        <div className='lg:col-span-5 xl:col-span-7'>
           <img
             src={recipe.image}
             width={864}
@@ -29,8 +29,8 @@ export const RecipeDetail = () => {
             loading='lazy'
           />
         </div>
-        <div className='col-span-5'>
-          <div className='w-full h-full text-white flex-1 text-xl leading-relaxed px-8 flex flex-col justify-end'>
+        <div className='lg:col-span-7 xl:col-span-5'>
+          <div className='w-full h-full text-white flex-1 text-xl leading-relaxed py-8 lg:py-0 lg:px-8 flex flex-col justify-end'>
             {recipe.description}
           </div>
         </div>

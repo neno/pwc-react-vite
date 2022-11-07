@@ -7,8 +7,8 @@ const defaultValues = {
   id: '',
   name: '',
   image: '',
-  description: ''
-}
+  description: '',
+};
 
 export const RecipeNew = () => {
   const navigate = useNavigate();
@@ -22,14 +22,16 @@ export const RecipeNew = () => {
   return (
     <Container>
       <PageHeader title='New Recipe' />
-      <RecipeForm onSubmit={submitFormData} values={defaultValues}>
-        <p className='py-4 full-w mt-[1.1rem] flex gap-4 align-center justify-start'>
-          <Button>Add Recipe</Button>
-          <Button path='/' hierarchy='tertiary'>
-            Cancel
-          </Button>
-        </p>
-      </RecipeForm>
+      <div className='relative pt-8'>
+        <RecipeForm onSubmit={submitFormData} values={defaultValues}>
+          <p className='py-4 full-w mt-[1.1rem] flex gap-4 align-center justify-start'>
+            <Button>Add Recipe</Button>
+            <Button path='/' hierarchy='tertiary'>
+              Cancel
+            </Button>
+          </p>
+        </RecipeForm>
+      </div>
     </Container>
   );
 };
