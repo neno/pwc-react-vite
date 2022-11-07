@@ -1,29 +1,30 @@
 import { IRecipe } from '@/recipes/Recipes.types';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { InputField, TextareaField } from '..';
 import { IRecipeFormProps } from './RecipeForm.types';
+
+function testImage(url: string, setImageUrl: (url: string) => void) {
+  const tester=new Image();
+  tester.onerror = () => setImageUrl('/placeholder.png')
+  tester.onload= () => setImageUrl(url);
+  tester.src=url;
+}
 
 export const RecipeForm: FC<IRecipeFormProps> = ({
   children,
   onSubmit,
   values,
 }) => {
+  const [imageUrl, setImageUrl] = useState('/placeholder.png');
   const methods = useForm<IRecipe>({ mode: 'onBlur', defaultValues: values });
-  const {
-    handleSubmit,
-    watch,
-    register,
-    formState: { errors },
-  } = methods;
-  const imageUrl = !!watch('image') ? watch('image') : '/placeholder.png';
+  const { handleSubmit, watch } = methods;
+  const imageWatch = watch('image');
 
-  //   function testImage(URL) {
-  //     var tester=new Image();
-  //     tester.onload=imageFound;
-  //     tester.onerror=imageNotFound;
-  //     tester.src=URL;
-  // }
+  // TODO: make this more efficient
+  useEffect(() => {
+    testImage(imageWatch, setImageUrl)
+  }, [imageWatch]);
 
   return (
     <FormProvider {...methods}>
